@@ -31,7 +31,7 @@ namespace boxen
         {
             hobby hobber = (hobby)lbhobbies.SelectedItem;
 
-            lbSelecties.Items.Add(hobber.Categorie+":"+hobber.Activiteit);
+            lbSelecties.Items.Add(hobber);
 
         }
 

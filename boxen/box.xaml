@@ -6,19 +6,53 @@
         xmlns:local="clr-namespace:boxen"
         mc:Ignorable="d"
         Title="box" Height="350" Width="525" Loaded="Window_Loaded">
-    <StackPanel Orientation="Vertical" Margin="0 20 0 0">
+    <StackPanel Orientation="Vertical" >
         <StackPanel Orientation="Horizontal">
             <TextBox Margin="10" Text="Categorie:"></TextBox>
             <ComboBox Name="categorie" Width="150" Margin="10" SelectionChanged="categorie_SelectionChanged">
             </ComboBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="80" Margin="10 20 0 0">
-            <ListBox Width="300" Name="lbhobbies" DisplayMemberPath="Activiteit"></ListBox>
-            <ToggleButton Name="Kies" Content="Kies" Margin="20 30 0 30" Width="150" Click="Kies_Click"></ToggleButton>
+        <StackPanel Orientation="Horizontal" Height="100" Margin="10 20 0 0">
+            <ListBox Width="300" Name="lbhobbies">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Black" Width="265">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Path=Symbool}" MaxHeight="40" Stretch="Fill">
+
+                                </Image>
+                                <TextBlock Text="{Binding Path=Activiteit}" VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+            <ToggleButton Name="Kies" Content="Kies" Margin="10" VerticalAlignment="Top" Width="150" Click="Kies_Click"></ToggleButton>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="80" Margin="10 20 0 0">
-            <ListBox Width="300" Name="lbSelecties"></ListBox>
-            <ToggleButton Name="Verwijderen" Content="Verwijderen" Margin="20 30 0 30" Width="150" Click="Verwijderen_Click"></ToggleButton>
+        <StackPanel Orientation="Horizontal" Height="100" Margin="10 20 0 0">
+            <ListBox Width="300" Name="lbSelecties">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black">
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="{Binding Path=Symbool}" Height="40">
+
+                                </Image>
+                                <TextBlock Text="{Binding Path=Activiteit}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                       
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ToggleButton Name="Verwijderen" Content="Verwijderen" Margin="10" Width="150" VerticalAlignment="Top" Click="Verwijderen_Click"></ToggleButton>
         </StackPanel>
     </StackPanel>
 </Window>
