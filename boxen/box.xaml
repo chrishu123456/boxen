@@ -54,5 +54,6 @@
             </ListBox>
             <ToggleButton Name="Verwijderen" Content="Verwijderen" Margin="10" Width="150" VerticalAlignment="Top" Click="Verwijderen_Click"></ToggleButton>
         </StackPanel>
+        <Button Name="Samenvatting" Content="Samenvatting" Height="30" Margin="2" HorizontalAlignment="Center" Width="150" Click="Samenvatting_Click"></Button>
     </StackPanel>
 </Window>

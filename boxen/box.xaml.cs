@@ -80,5 +80,22 @@ namespace boxen
             lbSelecties.Items.RemoveAt(lbSelecties.SelectedIndex);
       
         }
+
+        private void Samenvatting_Click(object sender, RoutedEventArgs e)
+        {
+            string hobje="";
+            if (MessageBox.Show("Wil je een samenvatting van je hobbies ? ","hobbies", MessageBoxButton.YesNo, MessageBoxImage.Question,MessageBoxResult.Yes )== MessageBoxResult.Yes)
+                {
+                foreach (var select in lbSelecties.Items )
+                {
+                    hobby select1 = (hobby)select;
+                    hobje = hobje + ", " + select1.Activiteit.ToString(); }
+
+                if (lbSelecties.Items.Count == 0)
+                { MessageBox.Show("Geen hobbies", "Samenvatting", MessageBoxButton.OK); }
+                else { MessageBox.Show(hobje, "Samenvatting",MessageBoxButton.OK); }
+               
+            };
+        }
     }
 }
