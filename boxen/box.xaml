@@ -9,7 +9,7 @@
     <StackPanel Orientation="Vertical" Margin="0 20 0 0">
         <StackPanel Orientation="Horizontal">
             <TextBox Margin="10" Text="Categorie:"></TextBox>
-            <ComboBox Name="categorie" Width="150" SelectionChanged="categorie_SelectionChanged">
+            <ComboBox Name="categorie" Width="150" Margin="10" SelectionChanged="categorie_SelectionChanged">
             </ComboBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="80" Margin="10 20 0 0">
